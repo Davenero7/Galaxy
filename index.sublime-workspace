@@ -1,0 +1,760 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"conte",
+				"content"
+			],
+			[
+				"st",
+				"style\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!DOCTYPE HTML>\n<HTML lang=\"en\">\n   <HEAD>\n   <Meta charset=\"UTF-8\">\n   <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n   <link rel=\"stylesheet\" href=\"css/estilos.css\">\n   <link rel=\"stylesheet\" href=\"css/font-awesome.min.css\">\n\t<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>\n\t<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"img/favicon.ico\">\n\t<script src=\"js/jquery-3.2.1.js\"></script>\n\t<script src=\"js/main.js\"></script>\n\n\t<style type=\"text/css\">\n\t\t\t\tbody \t{\n\t\t\t\tfont-family:oswald, helvetica, arial, sans-serif;\n\t\t\t\tbackground: url(img/universe.jpg);\n\t\t\t\tbackground-size:cover;  /*para que abaque el 100% de ancho*/\n\t\t\t\tbackground-attachment: fixed; /*para que el fondo se quede fija*/\n\t\t\t\tbackground-position:0 0px;\n\t\t\t\t\t\t\t}\t\n\t</style>\n\n\n      <TITLE>Base de Datos</TITLE>\n\n      <div id=\"particles-js\"></div>\n\n   </HEAD>\n   <BODY>\n     <header>\n       <div class=\"menu\">\n       \n        <div class=\"contenedor\">\n          <div class=\"logo-nombre\">\n\t\t\tDaveNero\n\t\t</div>\n\t\t\t\t\n\t\t<div class=\"logo \">\t\t\t\n          \t<div class=\"btn-menu\" id=\"btn-menu\">\t\n\t\t\t\t<span class=\"fa fa-circle-o-notch\">\n\t\t\t</div>\n\t\t</div>\t\t\t\n            \t\n       \t\t\n          \n            <Nav>\n              <ul>\n                <li><a href=\"index.html\"><span class=\"fa fa-home\"> </a></li>\n                <li><a href=\"#\">Proyectos </a></li>\n                <li><a href=\"#\">Contacto </a></li>\n                <li><a href=\"#\">Software </a></li>\n              </ul>\n            </nav>\n        </div>\n       </div>\n     </header>\n\n     \n\n\n     <div class=\"texto\">\n\t\t\t<h2>Base de Datos</h2>\n\t\t</div>\n\n<div class=\"principal contenedor\">\n\t<article>\n\t\t<h2 class=\"titulo\">MySql</h2><br>\n\t\t\t<ol type=\"I\">\n\t\t\t\t<li><a href=\"#\" onclick=\"return toggle(0)\">Crear una base de datos</a></li>\n\t\t\t\t<p class=\"toggle-content\" id=\"contenido-0\">\n\t\t\t\tCREATE DATABASE IF NOT EXISTS [db_name] CHARACTER SET = [charset] DEFAULT COLLATE = [collate]<br>\n\t\t\t\tEjemplo<br>\n\t\t\t\tCREATE DATABASE IF NOT EXISTS base_prueba CHARACTER SET = utf8 DEFAULT COLLATE = utf8_general_ci\n\t\t\t\t</p>\n\n\t\t\t\t<li><a href=\"#\" onclick=\"return toggle(1)\">Como hacer respaldos de una base de datos</a></li>\n\t\t\t\t<p class=\"toggle-content\" id=\"contenido-1\">\n\t\t\t\t\t1) mysqldump [opciones] nombre_bd [nombre_tabla1 nombre_tabla2 ...] > respaldo.sql<br>\n\t\t\t\t\t2) mysqldump [opciones] --databases nombre_bd1 nombre_bd2 > respaldo.sql<br>\n\t\t\t\t\t3) mysqldump [opciones] --all-databases > respaldo.sql<br>\n\t\t\t\t\tEjemplo<br>\n\t\t\t\t\tmysqldump --lock-tables --single-transaction --default-character-set=utf8 -u facturacion -p fAc7UR4cd -h localhost fact-efectiva > ExportFact04122017.sql\n\t\t\t\t\t\t></p>\n\t\t\t\t<li><a href=\"#\" onclick=\"return toggle(2)\">Como crear Usuario en base de datos</a></li>\n\t\t\t\t<p class=\"toggle-content\" id=\"contenido-2\">CREATE USER 'facturacion-demo'@'localhost' IDENTIFIED BY 'F@c7uRRac10n';></p>\n\n\t\t\t\t<li><a href=\"#\" onclick=\"return toggle(3)\">Quitar a un usuario</a></li>\n\t\t\t\t<p class=\"toggle-content\" id=\"contenido-3\">DROP USER ‘usuario_prueba’@‘localhost’;></p>\n\n\t\t\t\t\t<li><a href=\"#\" onclick=\"return toggle(4)\">Otorgar privilegios a un usuario</a></li>\n\t\t\t\t\n\t\t\t\t\t-Todos los <a href=\"#\" onclick=\"return toggle(5)\">privilegios</a>\n\t\t\t\t\t<p class=\"toggle-content\" id=\"contenido-5\">\n\t\t\t\t\tALL PRIVILEGES: como mencionamos previamente esto permite a un usuario de MySQL acceder a todas las bases de datos asignadas en el sistema.<br>\n\t\t\t\t\tCREATE: permite crear nuevas tablas o bases de datos.<br>\n\t\t\t\t\tDROP: permite eliminar tablas o bases de datos.<br>\n\t\t\t\t\tDELETE: permite eliminar registros de tablas.<br>\n\t\t\t\t\tINSERT: permite insertar registros en tablas.<br>\n\t\t\t\t\tSELECT: permite leer registros en las tablas.<br>\n\t\t\t\t\tUPDATE: permite actualizar registros seleccionados en tablas.<br>\n\t\t\t\t\tGRANT OPTION: permite remover privilegios de usuarios.</p>\n\t\t\t\t\t<p class=\"toggle-content\" id=\"contenido-3\">\n\t\t\t\t\tGRANT [permiso] ON [nombre de bases de datos].[nombre de tabla] TO ‘[nombre de usuario]’@'localhost’;<br>\n\t\t\t\t\tgrant all privileges ON `fact-efectiva-demo33`.* TO 'facturacion-demo'@'%' IDENTIFIED BY 'F@c7uRRac10n';<br><br>\n\t\t\t\t\tSiempre Actualizar los privilegios con un <font color=\"red\">flush privileges</font>\n\t\t\t\t\t</p><br>\n\t\t\t\n\t\t\t\t<li><a href=\"#\" onclick=\"return toggle(6)\">Quitar privilegios a un usuario</a></li>\n\t\t\t\t<p class=\"toggle-content\" id=\"contenido-6\">REVOKE [permiso] ON [nombre de base de datos].[nombre de tabla] FROM ‘[nombre de usuario]’@‘localhost’;></p>\n\n\t\t\t\t<li><a href=\"Restablecer contraseña de root mysql.html\" onclick=\"return toggle(7)\">Restablecer contraseña de root en mysql</a></li>\n\n\t\t\t</ol>\n\t\t</article>\n\n\t</div>\n\n\n\t\t<div class=\"full-menu\">\n\t\t\t<div class=\"wrap\">\n\t\t\t\t<nav class=\"navegacion\">\n\t\t\t\t\t<ul class=\"menu-principal\">\n\t\t\t\t\t\t<li><a href=\"#\">Base de Datos</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">Programación</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">Wordpress</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">Linux</a></li>\n\n\t\t\t\t\t</ul>\n\t\t\t\t\t<div class=\"social-items\">\n\n\t\t\t\t\t\t<a href=\"#\" class=\"fa fa-facebook\"></a>\n\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t</div>\n\t\t</div>\n\n\n  <script src=\"http://code.jquery.com/jquery-latest.js\"></script>\n\t<script src=\"particles.min.js\"></script>\n\t<script src=\"particulas.js\"></script>\n\n   </BODY>\n</HTML>\n",
+			"file": "BBDD.html",
+			"file_size": 5456,
+			"file_write_time": 131599307227090518,
+			"settings":
+			{
+				"buffer_size": 5288,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Manual de Handal San gabriel\n\nCrear usuario\n\nAñadir producto\nseguimiento de paquete\nAñadir Etiqeta de nuevo y rebajas del 10%, 20%\nCambiar el Slider\n\n\nChat Jivochat Horarios de atencion\nPaypal Retiro de saldo\n\nc05522ef511d068f0451e4c0ebed4378",
+			"file": "/C/Users/David/AppData/Local/Temp/manual handal.txt",
+			"file_size": 255,
+			"file_write_time": 131600155940390027,
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Manual de Handal San gabriel\n\nCrear usuario\n\nAñadir producto\nseguimiento de paquete\nAñadir Etiqeta de nuevo y rebajas del 10%, 20%\nCambiar el Slider\n\n\nChat Jivochat Horarios de atencion\nPaypal Retiro de saldo\n\nc05522ef511d068f0451e4c0ebed4378",
+			"file": "/C/Users/David/AppData/Local/Temp/manual handal-1.txt",
+			"file_size": 255,
+			"file_write_time": 131600156814993611,
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Restablecer contraseña de root mysql.html",
+			"settings":
+			{
+				"buffer_size": 4094,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/David/control9.log",
+			"settings":
+			{
+				"buffer_size": 4998342,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/David/catalina.2018-01-05.log",
+			"settings":
+			{
+				"buffer_size": 146437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/David/Downloads/catalina.2018-01-05.log",
+			"settings":
+			{
+				"buffer_size": 146437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/David/Downloads/catalina.2018-01-05 (1).log",
+			"settings":
+			{
+				"buffer_size": 146437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/David/catalina.2018-01-11.log",
+			"settings":
+			{
+				"buffer_size": 181020,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/David/wp-config.php",
+			"settings":
+			{
+				"buffer_size": 3201,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/David/Desktop/manual handal.txt",
+			"settings":
+			{
+				"buffer_size": 242,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/estilos.css",
+			"settings":
+			{
+				"buffer_size": 3874,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 4047,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 1200,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/David/Documents/Pagina/Davenero"
+	],
+	"file_history":
+	[
+		"/C/Users/David/catalina.2018-01-04.log",
+		"/C/Users/David/intranet_access_log.2018-01-04.txt",
+		"/C/Users/David/Desktop/CSD new materiales/CSD_DMC06071124A_20160126203619/00001000000401278507.cer",
+		"/C/Users/David/Desktop/CSD new materiales/CSD_DMC06071124A_20160126203619/CSD_materiales_DMC06071124A_20160126_203441.key",
+		"/C/Users/David/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/O5XLFB94/7f223b38-db6d-4baf-a4c4-531d232618b0.xml",
+		"/C/Users/David/mysql.log",
+		"/C/Users/David/Desktop/wordpress/wp-config-sample.php",
+		"/C/Users/David/Desktop/David/WM.txt",
+		"/C/Users/David/Desktop/David/Fontacto",
+		"/C/Users/David/Desktop/David/GoDaddy.txt",
+		"/C/Users/David/Desktop/query FE.txt",
+		"/C/Users/David/Downloads/GMP980522BZ1_PAPAGENO154.xml",
+		"/C/Users/David/catalina.2018-01-02.log",
+		"/C/Users/David/Desktop/rmartinez/xml4.xml",
+		"/C/Users/David/Desktop/rmartinez/blob1",
+		"/C/Users/David/Documents/Navicat/Premium/logs/LogHistory.txt",
+		"/C/Users/David/Desktop/facturacion-web.demo33.log",
+		"/C/Users/David/Desktop/query facturacion efectiva.txt",
+		"/C/Users/David/Desktop/server.xml",
+		"/C/Users/David/Desktop/facturacionefectiva_access_logProd.2017-12-14.txt",
+		"/C/Users/David/Documents/Pagina/Davenero/css/estilos.css",
+		"/C/Users/David/Documents/Pagina/Davenero/index.html",
+		"/C/Users/David/Documents/Pagina/Ocultar-y-Mostrar-Div-JavaScript-CSS3-master/css/style.css",
+		"/C/Users/David/Documents/Pagina/Ocultar-y-Mostrar-Div-JavaScript-CSS3-master/index.html",
+		"/C/Users/David/Documents/Pagina/Ocultar-y-Mostrar-Div-JavaScript-CSS3-master/js/script.js",
+		"/C/Users/David/Downloads/1.csv",
+		"/C/Users/David/Desktop/Comandos SQL de ORO.txt",
+		"/C/Users/David/Documents/1.csv",
+		"/C/Users/David/Documents/Pagina/Davenero/js/main.js",
+		"/C/Users/David/Desktop/David/Querys optimizados Dave.txt",
+		"/C/Users/David/Downloads/21_12a6e51b-70fa-456f-9e6d-663397633b5b.xml",
+		"/C/Users/David/Downloads/1.1.csv",
+		"/C/Users/David/Documents/Pagina/Proyecto Particulas(HTML,CSS,JS)/js/main.js",
+		"/C/Users/David/Documents/Pagina/Proyecto Particulas(HTML,CSS,JS)/css/estilos.css",
+		"/C/Users/David/Documents/Pagina/Proyecto Particulas(HTML,CSS,JS)/BBDD.html",
+		"/C/Users/David/Documents/Pagina/Proyecto Particulas(HTML,CSS,JS)/index.html",
+		"/C/Users/David/Documents/Pagina/Menu a pantalla completa/css/estilos.css",
+		"/C/Users/David/Documents/Pagina/Menu a pantalla completa/index.html",
+		"/C/Users/David/Downloads/Dump20171205_LOCALHOST_FE.sql",
+		"/C/Users/David/Documents/Pagina/Proyecto Particulas(HTML,CSS,JS)/estilos.css",
+		"/C/Users/David/Documents/Pagina/particles.js-master/particles.js",
+		"/C/Users/David/Desktop/Notas/Bstmex/FIRMA_MIHABITAT.html",
+		"/C/Users/David/Desktop/Notas/Bstmex/FIRMA_BSTMEXICO_SOPORTE.html",
+		"/C/Users/David/Documents/Pagina/VincentGarreau-particles.js-2196b1a/demo/index.html",
+		"/C/Users/David/Desktop/Notas/Bstmex/FIRMA_DAVID_HDZ.html"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fAc7UR4cdd",
+			"\n'@'",
+			"fdgdgfdlocalhost",
+			"''@'",
+			"fecha",
+			"img",
+			"arial"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 9,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "BBDD.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5288,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2672,
+								2672
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1296.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/David/AppData/Local/Temp/manual handal.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								210
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/David/AppData/Local/Temp/manual handal-1.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								130
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Restablecer contraseña de root mysql.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3228,
+								3228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 109.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/David/control9.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4998342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 982886.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/David/catalina.2018-01-05.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 146437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134122,
+								135934
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 27188.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/David/Downloads/catalina.2018-01-05.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 146437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 28103.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/David/Downloads/catalina.2018-01-05 (1).log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 146437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 28281.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/David/catalina.2018-01-11.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 181020,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 24638.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/Users/David/wp-config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								883,
+								883
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/C/Users/David/Desktop/manual handal.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								210
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "css/estilos.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3874,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2373,
+								2373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2612.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								4047
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								873,
+								878
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 126.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+   <HEAD>
+   <Meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	   <link rel="stylesheet" href="css/estilos.css">
+	   <link rel="stylesheet" href="css/font-awesome.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="js/main.js"></script>
+
+
+
+	<style type="text/css">
+		body 	{
+	font-family:oswald, helvetica, arial, sans-serif;
+	background: url(img/mac.jpg);
+	background-size:cover;  /*para que abaque el 100% de ancho*/
+	background-attachment: fixed; /*para que el fondo se quede fija*/
+	background-position:0 0px;
+				}	
+	</style>
+
+      <TITLE>Intranet</TITLE>
+
+      <div id="particles-js"></div>
+
+   </HEAD>
+   <BODY>
+     <header>
+       <div class="menu">
+       
+        <div class="contenedor">
+          <div class="logo-nombre">
+			DaveNero
+		</div>
+				
+		<div class="logo ">			
+          	<div class="btn-menu" id="btn-menu">	
+				<span class="fa fa-circle-o-notch">
+			</div>
+		</div>			
+            	
+       		
+          
+            <Nav>
+              <ul>
+                
+                <li><a href="#">Proyectos </a></li>
+                <li><a href="#">Contacto </a></li>
+                <li><a href="#">Software</a></li>
+              </ul>
+            </nav>
+        </div>
+       </div>
+     </header>
+
+  		<div class="texto">
+			
+		</div>
+
+
+	<div class="principal contenedor">
+		<article>
+			<h2 class="titulo">Restablecer contraseña de root en mysql</h2>
+			<p class="fecha">26 de Enero de 2015</p>
+			<p>Para aquellas veces en la que se te olvido la contraseña de root y no sabes como restablecerla no te preocupes
+				aqui te enseño como claro <font color="red">Siempre y cuando tengas acceso al usuario ROOT en Linux</font></p>
+
+			<p>Detener el servidor<br>
+				<div class="comando">#> service mysqld stop</div>
+				o tambien pueden detenerlo<br>
+				<div class="comando">#> /etc/rc.d/init.d/mysqld stop</div></p>
+
+			<p>Iniciar en modo FULL o abierto</p>
+			<div class="comando">#> service mysqld stop</div>
+
+			<div class="comando">#> mysqld_safe --skip-grant-tables --skip-networking&</div>
+
+			<p><br>--skip-grant-tables esta opción causa que el servidor no use el sistema de privilegios lo que le da acceso ilimitado a todas las bases de datos a todos los usuarios de la base de datos.<br>
+
+			NOTA: Si MySQL fue configurado y compilado con la opción '--disable-grant-options' entonces lo anterior no funcionará y no hay mucho que se pueda hacer entonces y no se podrá cambiar la contraseña, aunque en la práctica realmente esta opción casi no se usa.<br>
+
+			--skip-networking deja de escuchar (LISTEN) conexiones TCP/IP provenientes de la red, es decir MySQL trabajaría en un ambiente totalmente local.
+
+			<br></p>
+
+			Iniciar el monitor<br>
+			<div class="comando">#>mysql -u root</div>
+
+			<iframe src="https://open.spotify.com/embed/user/dave7.spark/playlist/5xztWtvVUY41TIXOfQ4jFa" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+			<p>Como no hay sistema de privilegios en este momento, no se preguntara por la contraseña.</p>
+
+		</article>
+
+	</div>
+
+
+		<div class="full-menu">
+			<div class="wrap">
+				<nav class="navegacion">
+					<ul class="menu-principal">
+						<li><a href="BBDD.html"><span class="fa fa-database">  </span>  Base de Datos</a></li>
+						<li><a href="#"><span class="fa fa fa-html5"> </span> Programación</a></li>
+						<li><a href="#"><span class="fa fa fa-wordpress"> </span> Wordpress</a></li>
+						<li><a href="#"><span class="fa fa-linux"> </span> Linux</a></li>
+					</ul>
+					<div class="social-items">
+
+						<a href="#" class="fa fa-facebook"></a>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="particles.min.js"></script>
+	<script src="particulas.js"></script>
+
+   </BODY>
+</HTML>

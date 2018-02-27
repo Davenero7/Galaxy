@@ -1,0 +1,269 @@
+* { /*quitar  los margenes y paddings generales y establecer todos los elementos como un border box */
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+.contenedor {
+	width: 90%;
+	max-width:1000px;
+	margin:auto;
+}
+
+.fotogrande{
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.foto {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 180px;
+    width: 180px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+		border-radius:160px;
+		margin: 0 auto;
+		margin-top: 15px;
+		position: relative;
+}
+
+#particles-js {
+	width: 100%;
+	height:100%;
+	position: fixed;
+	background:rgba(0,0,0,.5); /* Un Color RGB 0.0.0 negro con una transparencia de .8 */
+}
+
+
+
+header {
+	position: relative;
+	height: auto;
+}
+
+header .menu {
+	background:rgba(255,255,255,.7);
+	overflow: hidden;
+}
+
+header .desplegable{
+	line-height:80px;
+}
+
+header .logo-nombre {
+	color:rgba(0,0,0,.8);
+	float: left;
+	font-size:30px;
+	line-height:80px;
+	margin-right: 20px;
+}
+
+header .logo {
+	color:rgba(0,0,0,.8);
+	float: left;
+	font-size:30px;
+	line-height:80px;
+}
+
+header .btn-menu{
+	font-size: 30px;
+	cursor: pointer;
+	
+}
+
+header nav {
+	float: right;
+}
+
+header nav ul {
+	list-style: none;
+}
+
+header nav ul li {
+	float: left;
+}
+
+header nav ul li a {
+	color:rgba(0,0,0,.8);
+	text-decoration: none;
+	display: block;
+	font-size:18px;
+	padding:0 20px;
+	line-height:80px;
+}
+
+header nav ul li:hover {
+	background:rgba(0,0,0,.8);
+	border-bottom: inset 5px solid #fff;
+}
+
+header nav ul li a:hover {
+	color:#fff;
+}
+
+/* Texto Inicial */
+.texto {
+	padding:25px 0;
+	text-align: center;
+	color:#fff;
+	position: relative;
+	font-weight: 400;
+}
+
+.texto h2, .texto p {
+	background: rgba(0,0,0,.1);
+	display:inline-block;
+	padding:10px 20px;
+}
+
+.texto h2 {
+	font-size:40px;
+	letter-spacing: 2.5px;
+	font-weight: normal;
+}
+
+.texto p {
+	font-size:20px;
+	letter-spacing: 2.5px;
+
+}
+
+/* Principal */
+.principal {
+	position: relative;
+	color:#000;
+}
+
+.principal article {
+	padding:32px;
+	background:#fff;
+	margin-bottom: 20px;
+}
+
+.principal article p {
+	margin-bottom: 25px;
+	line-height:24px;
+	font-family:helvetica, arial, sans-serif;
+}
+
+.principal article .fecha {
+	color:#939393;
+}
+
+.principal .comando {
+	font-size: 17px;
+	font-family:"Courier New", Courier, monospace;
+	color:#3221CF;
+}
+
+.caption-main h1{
+	font-size: 95px;
+	font-weight: 800;
+	color: #fff;
+}
+
+.caption-main .btn-view{
+	display: block;
+	margin: 50px auto 0px;
+
+	width: 350px;
+	padding: 20px 0px;
+	border: 2px solid #fff;
+	border-radius: 15px;
+
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* FULL MENU ===================*/
+
+.full-menu{
+	position: fixed;
+	top: 0;
+	left: -100%;
+
+	width: 14%;
+	height: 100vh;
+	background: #292929;
+
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+
+.full-menu .wrap{
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.full-menu .wrap .navegacion{
+	flex-basis: 0;
+	flex-grow: 1;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.full-menu .navegacion ul{
+	list-style: none;
+}
+
+.full-menu .navegacion ul li{
+	margin: 20px 0px;
+}
+
+.full-menu .navegacion ul li a{
+	font-family: 'Century Gothic';
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+}
+
+.full-menu .navegacion .social-items a{
+	text-decoration: none;
+	font-size: 25px;
+	color: #fff;
+	margin: 50px 20px 0px 0px;
+}
+
+.full-menu .navegacion ul li a:hover,
+.full-menu .navegacion .social-items a:hover{
+	color: #1EE0F1;
+}
+
+.full-menu .wrap .menu-text{
+	flex-basis: 0;
+	flex-grow: 1;
+
+	font-size: 15px;
+	color: #9A9A9A;
+	font-weight: 600;
+	text-align: right;
+}
+
+
+.contenido-1.{
+   	width: 100%;
+	margin: auto;
+	height: 0px;
+	background: #66ff33;
+	box-shadow: 10px 10px 3px #ff0000;
+	transition: height .4s;
+	}
+
+
+
+.toggle-content {
+    display: none;
+}
+

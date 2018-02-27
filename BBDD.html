@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+   <HEAD>
+   <Meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js"></script>
+
+	<style type="text/css">
+				body 	{
+				font-family:oswald, helvetica, arial, sans-serif;
+				background: url(img/universe.jpg);
+				background-size:cover;  /*para que abaque el 100% de ancho*/
+				background-attachment: fixed; /*para que el fondo se quede fija*/
+				background-position:0 0px;
+							}	
+	</style>
+
+
+      <TITLE>Base de Datos</TITLE>
+
+      <div id="particles-js"></div>
+
+   </HEAD>
+   <BODY>
+     <header>
+       <div class="menu">
+       
+        <div class="contenedor">
+          <div class="logo-nombre">
+			DaveNero
+		</div>
+				
+		<div class="logo ">			
+          	<div class="btn-menu" id="btn-menu">	
+				<span class="fa fa-circle-o-notch">
+			</div>
+		</div>			
+            	
+       		
+          
+            <Nav>
+              <ul>
+                <li><a href="index.html"><span class="fa fa-home"> </a></li>
+                <li><a href="#">Proyectos </a></li>
+                <li><a href="#">Contacto </a></li>
+                <li><a href="#">Software </a></li>
+              </ul>
+            </nav>
+        </div>
+       </div>
+     </header>
+
+     
+
+
+     <div class="texto">
+			<h2>Base de Datos</h2>
+		</div>
+
+<div class="principal contenedor">
+	<article>
+		<h2 class="titulo">MySql</h2><br>
+			<ol type="I">
+				<li><a href="#" onclick="return toggle(0)">Crear una base de datos</a></li>
+				<p class="toggle-content" id="contenido-0">
+				CREATE DATABASE IF NOT EXISTS [db_name] CHARACTER SET = [charset] DEFAULT COLLATE = [collate]<br>
+				Ejemplo<br>
+				CREATE DATABASE IF NOT EXISTS base_prueba CHARACTER SET = utf8 DEFAULT COLLATE = utf8_general_ci
+				</p>
+
+				<li><a href="#" onclick="return toggle(1)">Como hacer respaldos de una base de datos</a></li>
+				<p class="toggle-content" id="contenido-1">
+					1) mysqldump [opciones] nombre_bd [nombre_tabla1 nombre_tabla2 ...] > respaldo.sql<br>
+					2) mysqldump [opciones] --databases nombre_bd1 nombre_bd2 > respaldo.sql<br>
+					3) mysqldump [opciones] --all-databases > respaldo.sql<br>
+					Ejemplo<br>
+					mysqldump --lock-tables --single-transaction --default-character-set=utf8 -u usuario -p contraseña -h localhost amazon_DB > ExportFact04122017.sql
+						></p>
+				<li><a href="#" onclick="return toggle(2)">Como crear Usuario en base de datos</a></li>
+				<p class="toggle-content" id="contenido-2">CREATE USER 'Nuevo_usuario'@'localhost' IDENTIFIED BY 'Contraseña_de_BD';></p>
+
+				<li><a href="#" onclick="return toggle(3)">Quitar a un usuario</a></li>
+				<p class="toggle-content" id="contenido-3">DROP USER ‘usuario_prueba’@‘localhost’;></p>
+
+					<li><a href="#" onclick="return toggle(4)">Otorgar privilegios a un usuario</a></li>
+				
+					-Todos los <a href="#" onclick="return toggle(5)">privilegios</a>
+					<p class="toggle-content" id="contenido-5">
+					ALL PRIVILEGES: como mencionamos previamente esto permite a un usuario de MySQL acceder a todas las bases de datos asignadas en el sistema.<br>
+					CREATE: permite crear nuevas tablas o bases de datos.<br>
+					DROP: permite eliminar tablas o bases de datos.<br>
+					DELETE: permite eliminar registros de tablas.<br>
+					INSERT: permite insertar registros en tablas.<br>
+					SELECT: permite leer registros en las tablas.<br>
+					UPDATE: permite actualizar registros seleccionados en tablas.<br>
+					GRANT OPTION: permite remover privilegios de usuarios.</p>
+					<p class="toggle-content" id="contenido-4">
+					GRANT [permiso] ON [nombre de bases de datos].[nombre de tabla] TO ‘[nombre de usuario]’@'localhost’;<br>
+					grant all privileges ON `Nombre_de_BD`.* TO 'Usuario_BD'@'%' IDENTIFIED BY 'Contraseña_BD';<br><br>
+					Siempre Actualizar los privilegios con un <font color="red">flush privileges</font>
+					</p><br>
+			
+				<li><a href="#" onclick="return toggle(6)">Quitar privilegios a un usuario</a></li>
+				<p class="toggle-content" id="contenido-6">REVOKE [permiso] ON [nombre de base de datos].[nombre de tabla] FROM ‘[nombre de usuario]’@‘localhost’;></p>
+
+				<li><a href="Restablecer contraseña de root mysql.html" onclick="return toggle(7)">Restablecer contraseña de root en mysql</a></li>
+
+			</ol>
+		</article>
+
+	</div>
+
+
+		<div class="full-menu">
+			<div class="wrap">
+				<nav class="navegacion">
+					<ul class="menu-principal">
+						<li><a href="#">Base de Datos</a></li>
+						<li><a href="#">Programación</a></li>
+						<li><a href="#">Wordpress</a></li>
+						<li><a href="#">Linux</a></li>
+
+					</ul>
+					<div class="social-items">
+
+						<a href="#" class="fa fa-facebook"></a>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="particles.min.js"></script>
+	<script src="particulas.js"></script>
+
+   </BODY>
+</HTML>
