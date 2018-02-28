@@ -3,17 +3,17 @@
    <HEAD>
    <Meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <link rel="stylesheet" href="css/estilos.css">
-   <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link rel="stylesheet" href="../css/estilos.css">
+   <link rel="stylesheet" href="../css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-	<script src="js/jquery-3.2.1.js"></script>
-	<script src="js/main.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+	<script src="../js/jquery-3.2.1.js"></script>
+	<script src="../js/main.js"></script>
 
 	<style type="text/css">
 				body 	{
 				font-family:oswald, helvetica, arial, sans-serif;
-				background: url(img/universe.jpg);
+				background: url(../img/universe.jpg);
 				background-size:cover;  /*para que abaque el 100% de ancho*/
 				background-attachment: fixed; /*para que el fondo se quede fija*/
 				background-position:0 0px;
@@ -45,7 +45,7 @@
           
             <Nav>
               <ul>
-                <li><a href="index.html"><span class="fa fa-home"> </a></li>
+                <li><a href="../index.html"><span class="fa fa-home"> </a></li>
                 <li><a href="#">Proyectos </a></li>
                 <li><a href="#">Contacto </a></li>
                 <li><a href="#">Software </a></li>
@@ -110,6 +110,13 @@
 
 				<li><a href="Restablecer contraseña de root mysql.html" onclick="return toggle(7)">Restablecer contraseña de root en mysql</a></li>
 
+				<li><a href="#"  onclick="return toggle(8)">Buscar una tabla en base de datos  y mostrar las tablas</a></li>
+				<p class="toggle-content" id="contenido-8"> 
+				Mostrar listado de Tablas <br>
+				SHOW FULL TABLES FROM mi_base_de_datos<br>
+				Buscar una tabla en una base de datos<br>
+				SHOW FULL TABLES FROM mi_base_de_datos LIKE '%busqueda%'</p>
+
 			</ol>
 		</article>
 
@@ -120,10 +127,11 @@
 			<div class="wrap">
 				<nav class="navegacion">
 					<ul class="menu-principal">
-						<li><a href="#">Base de Datos</a></li>
-						<li><a href="#">Programación</a></li>
-						<li><a href="#">Wordpress</a></li>
-						<li><a href="#">Linux</a></li>
+						<li><a href="#"><span class="fa fa-database">  </span>  Base de Datos</a></li>
+						<li><a href="#"><span class="fa fa fa-html5"> </span> Programación</a></li>
+						<li><a href="temas_git.html"><span class="fa fa fa-github"> </span> GitHub</a></li>
+						<li><a href="#"><span class="fa fa fa-wordpress"> </span> Wordpress</a></li>
+						<li><a href="#"><span class="fa fa-linux"> </span> Linux</a></li>
 
 					</ul>
 					<div class="social-items">
@@ -137,8 +145,8 @@
 
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="particles.min.js"></script>
-	<script src="particulas.js"></script>
+	<script src="../particles.min.js"></script>
+	<script src="../particulas.js"></script>
 
    </BODY>
 </HTML>
