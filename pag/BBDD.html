@@ -17,7 +17,12 @@
 				background-size:cover;  /*para que abaque el 100% de ancho*/
 				background-attachment: fixed; /*para que el fondo se quede fija*/
 				background-position:0 0px;
-							}	
+							}
+
+        .base{
+          color: red;
+        }
+
 	</style>
 
 
@@ -29,20 +34,18 @@
    <BODY>
      <header>
        <div class="menu">
-       
+
         <div class="contenedor">
           <div class="logo-nombre">
 			DaveNero
 		</div>
-				
-		<div class="logo ">			
-          	<div class="btn-menu" id="btn-menu">	
+
+		<div class="logo ">
+          	<div class="btn-menu" id="btn-menu">
 				<span class="fa fa-circle-o-notch">
 			</div>
-		</div>			
-            	
-       		
-          
+		</div>
+
             <Nav>
               <ul>
                 <li><a href="../index.html"><span class="fa fa-home"> </a></li>
@@ -55,7 +58,7 @@
        </div>
      </header>
 
-     
+
 
 
      <div class="texto">
@@ -68,29 +71,22 @@
 			<ol type="I">
 				<li><a href="#" onclick="return toggle(0)">Crear una base de datos</a></li>
 				<p class="toggle-content" id="contenido-0">
-				CREATE DATABASE IF NOT EXISTS [db_name] CHARACTER SET = [charset] DEFAULT COLLATE = [collate]<br>
-				Ejemplo<br>
-				CREATE DATABASE IF NOT EXISTS base_prueba CHARACTER SET = utf8 DEFAULT COLLATE = utf8_general_ci
+				CREATE DATABASE IF NOT EXISTS <a class="base">base_de_datos</a>  CHARACTER SET = utf8 DEFAULT COLLATE = utf8_general_ci;<br>
 				</p>
 
 				<li><a href="#" onclick="return toggle(1)">Como hacer respaldos de una base de datos</a></li>
 				<p class="toggle-content" id="contenido-1">
-					1) mysqldump [opciones] nombre_bd [nombre_tabla1 nombre_tabla2 ...] > respaldo.sql<br>
-					2) mysqldump [opciones] --databases nombre_bd1 nombre_bd2 > respaldo.sql<br>
-					3) mysqldump [opciones] --all-databases > respaldo.sql<br>
-					Ejemplo<br>
-					mysqldump --lock-tables --single-transaction --default-character-set=utf8 -u usuario -p contraseña -h localhost amazon_DB > ExportFact04122017.sql
-						></p>
+				mysqldump --lock-tables --single-transaction --default-character-set=utf8 -u <a class="base">Usuario</a> -p -h <a class="base">Host</a> <a class="base">  Base_de_datos</a> > <a class="base">nombre_de_la_exportacion.sql</a>;
+				</p>
 				<li><a href="#" onclick="return toggle(2)">Como crear Usuario en base de datos</a></li>
-				<p class="toggle-content" id="contenido-2">CREATE USER 'Nuevo_usuario'@'localhost' IDENTIFIED BY 'Contraseña_de_BD';></p>
+				<p class="toggle-content" id="contenido-2">CREATE USER '<a class="base">Nuevo_usuario</a>'@'%' IDENTIFIED BY '<a class="base">Contraseña</a>';></p>
 
 				<li><a href="#" onclick="return toggle(3)">Quitar a un usuario</a></li>
-				<p class="toggle-content" id="contenido-3">DROP USER ‘usuario_prueba’@‘localhost’;></p>
-
+				<p class="toggle-content" id="contenido-3">DROP USER '<a class="base">Usuario</a>'@'%';></p>
 					<li><a href="#" onclick="return toggle(4)">Otorgar privilegios a un usuario</a></li>
-				
-					-Todos los <a href="#" onclick="return toggle(5)">privilegios</a>
-					<p class="toggle-content" id="contenido-5">
+          <p class="toggle-content" id="contenido-4">
+					<a href="#" onclick="return toggle(5)">-Todos los privilegios</a> <br>
+					<a class="toggle-content" id="contenido-5">
 					ALL PRIVILEGES: como mencionamos previamente esto permite a un usuario de MySQL acceder a todas las bases de datos asignadas en el sistema.<br>
 					CREATE: permite crear nuevas tablas o bases de datos.<br>
 					DROP: permite eliminar tablas o bases de datos.<br>
@@ -98,25 +94,36 @@
 					INSERT: permite insertar registros en tablas.<br>
 					SELECT: permite leer registros en las tablas.<br>
 					UPDATE: permite actualizar registros seleccionados en tablas.<br>
-					GRANT OPTION: permite remover privilegios de usuarios.</p>
-					<p class="toggle-content" id="contenido-4">
-					GRANT [permiso] ON [nombre de bases de datos].[nombre de tabla] TO ‘[nombre de usuario]’@'localhost’;<br>
-					grant all privileges ON `Nombre_de_BD`.* TO 'Usuario_BD'@'%' IDENTIFIED BY 'Contraseña_BD';<br><br>
-					Siempre Actualizar los privilegios con un <font color="red">flush privileges</font>
-					</p><br>
-			
-				<li><a href="#" onclick="return toggle(6)">Quitar privilegios a un usuario</a></li>
-				<p class="toggle-content" id="contenido-6">REVOKE [permiso] ON [nombre de base de datos].[nombre de tabla] FROM ‘[nombre de usuario]’@‘localhost’;></p>
+					GRANT OPTION: permite remover privilegios de usuarios.<br><br>
+        </a>
 
-				<li><a href="Restablecer contraseña de root mysql.html" onclick="return toggle(7)">Restablecer contraseña de root en mysql</a></li>
+					grant all privileges ON <a class="base">Base_de_datos</a>.* TO <a class="base">Usuario</a>@'%';  <br>
+					Siempre Actualizar los privilegios con un <font color="red">flush privileges;</font>
+					</p>
+
+				<li><a href="#" onclick="return toggle(6)">Quitar privilegios a un usuario</a></li>
+				<p class="toggle-content" id="contenido-6">
+          REVOKE all ON <a class="base">Base_de_datos</a>.* FROM <a class="base">Usuario</a>@'%';
+        </p>
+
+				<!-- <li><a href="Restablecer contraseña de root mysql.html" onclick="return toggle(7)">
+            Restablecer contraseña de root en mysql
+            </a></li> -->
 
 				<li><a href="#"  onclick="return toggle(8)">Buscar una tabla en base de datos  y mostrar las tablas</a></li>
-				<p class="toggle-content" id="contenido-8"> 
-				Mostrar listado de Tablas <br>
-				SHOW FULL TABLES FROM mi_base_de_datos<br>
+				<p class="toggle-content" id="contenido-8">
 				Buscar una tabla en una base de datos<br>
-				SHOW FULL TABLES FROM mi_base_de_datos LIKE '%busqueda%'</p>
+				SHOW FULL TABLES FROM <a class="base"> mi_base_de_datos</a> LIKE '%busqueda%'</p>
 
+        <li><a href="#" onclick="return toggle(9)">Aumentar Memoria </a></li>
+        <p class="toggle-content" id="contenido-9">
+          set global  net_buffer_length=10000000;  <br>
+          set global max_allowed_packet=1000000;
+        </p>
+        <li> <a href="#" onclick="return toggle(10)"> Desfragmentar tabla</a></li>
+        <p class="toggle-content" id="contenido-10">
+          Optimize table <a class="base">Nombre_tabla</a>;
+        </p>
 			</ol>
 		</article>
 
@@ -128,7 +135,7 @@
 				<nav class="navegacion">
 					<ul class="menu-principal">
 						<li><a href="#"><span class="fa fa-database">  </span>  Base de Datos</a></li>
-						<li><a href="#"><span class="fa fa fa-html5"> </span> Programación</a></li>
+						<li><a href="#"><span class="fa fa fa-html5"> </span> HTML5</a></li>
 						<li><a href="temas_git.html"><span class="fa fa fa-github"> </span> GitHub</a></li>
 						<li><a href="#"><span class="fa fa fa-wordpress"> </span> Wordpress</a></li>
 						<li><a href="#"><span class="fa fa-linux"> </span> Linux</a></li>
