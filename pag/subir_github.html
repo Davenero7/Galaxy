@@ -19,7 +19,7 @@
 	background-size:cover;  /*para que abaque el 100% de ancho*/
 	background-attachment: fixed; /*para que el fondo se quede fija*/
 	background-position:0 0px;
-				}	
+				}
 	</style>
 
       <TITLE>Intranet</TITLE>
@@ -30,20 +30,20 @@
    <BODY>
      <header>
        <div class="menu">
-       
+
         <div class="contenedor">
           <div class="logo-nombre">
 			DaveNero
 		</div>
-				
-		<div class="logo ">			
-          	<div class="btn-menu" id="btn-menu">	
+
+		<div class="logo ">
+          	<div class="btn-menu" id="btn-menu">
 				<span class="fa fa-circle-o-notch">
 			</div>
-		</div>			
-            	
-       		
-          
+		</div>
+
+
+
             <Nav>
               <ul>
                 <li><a href="../index.html"><span class="fa fa-home"> </a></li>
@@ -59,54 +59,44 @@
      <div class="texto">  <!-- titutlo -->
 			<h2>GitHub</h2>
 		</div>
- 
+
 
 	<div class="principal contenedor">
 		<article>
 			<h2 class="titulo">Como Subir un proyecto a GitHub</h2>
 				<br><br>
-				<p>1.-Abrimos Git CMD y nos situamos en la ruta del original del proyecto en este caso es</p>
-				<div class="comando">C:\Git\Galaxy</div><br>
-					<img src="../img/1g.png">
-				<p>2.- Iniciamos un repositorio con el comando</p> <div class="comando">$git Init</div><br>
-					<img src="../img/2g.png"> 
+				<p>1.- Una vez tienes Git instalado, tienes que ir, en el terminal, a la carpeta de tu proyecto, entonces allí generas tu repositorio en local con la orden "init" (si es q no lo has hecho ya).
+</p> <div class="comando">git Init</div><br>
+					<img src="../img/2g.png">
 					<br>
-					<img src="../img/3g.png">
-					<br>
-				<p>3.- Checamos el status del proyecto y los archivos que no se han subido estaran en rojo</p> 
-				<div class="comando">$git status</div><br>
-				 	<img src="../img/4g.png">
-			<p>4.- Después con el comando git add –A Agregaremos todo el contenido de la carpeta si queremos agregar un solo</p>
-			<div class="comando">$git add -A | $git add . </div><br>
+          <br>
+			<p>2.- Luego, desde la carpeta de haces el comando "add" para agregar todos los archivos al "staging area".</p>
+			<div class="comando">git add . </div><br>
 					<img src="../img/4g.png">
-				<p><br>Para un subir un solo archivo seria git add nombre.extension<br>
 				<br>Nota: ( git add . ) donde el punto representa el directorio actual, por lo que se agrega todo en y debajo de él. <br> El ( git add -A ) asegura que incluso se incluyan las eliminaciones de archivos.<br><br>
-				 	
-				Extra si hacemos un Git Status los archivos aparecen en verde de preparados para subir<br><br>
-				 	<img src="../img/5g.png"><br><br>
-				5.- Ahora le tenemos que agregar un nombre, comentario ó versión se debe poner el comando <br></p>
-				<div class="comando">$git commit –m “ versión X”</div>  <br>
+				3.- Luego lanzas el comando para el commit, que se lleva los archivos al repositorio para control de cambios. Es el siguiente: <br></p>
+				<div class="comando">git commit -m 'mi primer commit'</div>  <br>
 				  	<img src="../img/6g.png">
-				<p>6.-Ya tenemos el proyecto preparado para subirlo ahora vamos a decirle a donde subirlo para eso vamos a utilizar el comando <br></p>
-				<div class="comando">$git remote add origin link</div><br><br>
+				<p>4.-Ya tenemos el proyecto preparado para subirlo ahora vamos a decirle a donde subirlo para eso vamos a utilizar el comando <br></p>
+				<div class="comando">git remote add origin https://github.com/aqui-tu-repo.git</div><br><br>
 				 	<img src="../img/7g.png">
-				<p>El link lo sacaremos de la pagina principal de Github de nuestro usuario<br>
-				 	<img src="../img/link.png"><br><br>
-				7.-Ya para subirlo utilizaremos el siguiente comando 
+				<br>
+				5.-Ya para subirlo utilizaremos el siguiente comando
 				Nota: pedirá las credenciales de GitHub<br> </p>
-				<div class="comando">$git push origin master</div></p>
-				<img src="../img/7g.png">
-				 
+				<div class="comando">git push -u origin master</div></p>
+				<img src="../img/8g.png">
+
 				<br><br>
 				<p>Listo ya se habrá subido</p>
 				<br><br>
 
 				<p>Actualizar<br>
-				Si lo que queremos es actualizar son los siguientes 4 comandos<br><br>
-				1.-agregar los nuevos archivos git add –A <br>
-				2.- checar el status git status<br>
-				3.-ponerle nombre, comentario o versión git commit –m “versión X.X”<br>
-				4.-subirlo con git push origin master<br></p>
+        Si lo que queremos es actualizar son los siguientes 4 comandos<br><br>
+        
+				1.- Agregar los nuevos archivos git add . <br>
+				2.- Checar el status git status<br>
+				3.- Ponerle nombre, comentario o versión git commit –m “versión X.X”<br>
+				4.- Subirlo con git push origin master<br></p>
 
 		</article>
 
