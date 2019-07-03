@@ -1,121 +1,72 @@
-<!DOCTYPE HTML>
-<HTML lang="en">
-   <HEAD>
-   <Meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	   <link rel="stylesheet" href="css/estilos.css">
-	   <link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-		<script src="js/jquery-3.2.1.js"></script>
-		<script src="js/main.js"></script>
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Snake highlight</title>
+  
+      <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <div class="page">
+  <div class="container">
+    <div class="left">
+      <div class="login">Login</div>
+      <div class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+    </div>
+    <div class="right">
+      <svg viewBox="0 0 320 300">
+        <defs>
+          <linearGradient
+                          inkscape:collect="always"
+                          id="linearGradient"
+                          x1="13"
+                          y1="193.49992"
+                          x2="307"
+                          y2="193.49992"
+                          gradientUnits="userSpaceOnUse">
+            <stop
+                  style="stop-color:#ff00ff;"
+                  offset="0"
+                  id="stop876" />
+            <stop
+                  style="stop-color:#ff0000;"
+                  offset="1"
+                  id="stop878" />
+          </linearGradient>
+        </defs>
+        <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
+      </svg>
+      <div class="form">
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <input type="submit" id="submit" value="Submit">
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+		if(isset($_POST['email'])&&isset($_POST['clave'])){
+			require_once "php/connect.php";
+			require_once "procesos/login.php";
+		}
+	?>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>
 
 
 
-	<style type="text/css">
-		body 	{
-	font-family:oswald, helvetica, arial, sans-serif;
-	background: url(img/mac.jpg);
-	background-size:cover;  /*para que abaque el 100% de ancho*/
-	background-attachment: fixed; /*para que el fondo se quede fija*/
-	background-position:0 0px;
-				}
-	</style>
-
-      <TITLE>David Hdz</TITLE>
-
-      <div id="particles-js"></div>
-
-   </HEAD>
-   <BODY>
-     <header>
-       <div class="menu">
-
-        <div class="contenedor">
-          <div class="logo-nombre">
-                  <img src="img/logo.png" width="40px" height="40"  alt="">
-                Dave
-		      </div>
-
-		<div class="logo ">
-          	<div class="btn-menu" id="btn-menu">
-				<span class="fa fa-circle-o-notch">
-			</div>
-		</div>
-            <Nav>
-              <ul>
-                <li><a href="#">Proyectos </a></li>
-                <li><a href="#">Contacto </a></li>
-                <li><a href="#">Software</a></li>
-              </ul>
-            </nav>
-        </div>
-       </div>
-     </header>
-
-     <div class="foto">
-       <img class="foto" src="img/avatar.jpg">
-     </div>
+    <script  src="./script.js"></script>
 
 
-     <div class="texto">
-			<h2>David </h2>
-			<br>
-			<p>Pagina Web</p>
-		</div>
-
-	<div class="principal contenedor">
-		<article>
-			<h2 class="titulo">Titular del Articulo</h2>
-			<p class="fecha">26 de Enero de 2015</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</article>
-
-	</div>
 
 
-		<div class="full-menu">
-			<div class="wrap">
-				<nav class="navegacion">
-					<ul class="menu-principal">
-						<li><a href="pag/BBDD.html"><span class="fa fa-database">  </span>  Base de Datos</a></li>
-						<li><a href="#"><span class="fa fa fa-html5"> </span> HTML5</a></li>
-            <li><a href="#"><span class="fa fa fa-wordpress"> </span> CSS</a></li>
-						<li><a href="pag/temas_git.html"><span class="fa fa fa-github"> </span> GitHub</a></li>
-						<li><a href="#"><span class="fa fa-linux"> </span> Linux</a></li>
-					</ul>
-					<div class="social-items">
+</body>
 
-						<a href="#" class="fa fa-facebook"></a>
-
-					</div>
-				</nav>
-			</div>
-		</div>
-
-
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="particles.min.js"></script>
-	<script src="particulas.js"></script>
-
-   </BODY>
-</HTML>
+</html>
