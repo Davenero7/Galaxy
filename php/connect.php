@@ -1,5 +1,5 @@
 <?php
 
-  $connect = new PDO ('mysql:host=localhost;dbname=BDDave','root','');
+  $connect = new PDO ('mysql:host=localhost;dbname=bddave','root','');
 
  ?>
