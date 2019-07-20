@@ -61,26 +61,16 @@
      <div class="texto">
 			<h2>David </h2>
 			<br>
-			<p>Pagina Web</p>
+			<p>Bienvenido a mi Pagina Web</p>
 		</div>
 
 	<div class="principal contenedor">
 		<article>
-			<h2 class="titulo">Aviso de Privacidad</h2>
+			<h2 class="titulo">Acerca de Mi</h2>
 			<p class="fecha">Actualizado 01 de Julio de 2019</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Hola buen dia me llamo David soy un programador backend & frontend manejo diferentes tecnologias
+        como php, mysql, linux, jquery 
+      </p>
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
